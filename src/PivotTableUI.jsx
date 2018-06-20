@@ -203,7 +203,7 @@ export class Dropdown extends React.PureComponent {
           role="button"
         >
           <div className="pvtDropdownIcon">{this.props.open ? '×' : '▾'}</div>
-          {this.props.current || <span>&nbsp;</span>}
+          {this.props.renderAttributeKey(this.props.current) || <span>&nbsp;</span>}
         </div>
 
         {this.props.open && (
@@ -233,6 +233,10 @@ export class Dropdown extends React.PureComponent {
       </div>
     );
   }
+}
+
+Dropdown.defaultProps = {
+  renderAttributeKey: x => x
 }
 
 class PivotTableUI extends React.PureComponent {
@@ -483,6 +487,7 @@ class PivotTableUI extends React.PureComponent {
                 vals: {$splice: [[i, 1, value]]},
               })
             }
+            renderAttributeKey={this.props.renderAttributeKey}
           />,
           i + 1 !== numValsAllowed ? <br key={`br${i}`} /> : null,
         ])}

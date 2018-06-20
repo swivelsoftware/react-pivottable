@@ -296,7 +296,7 @@ var Dropdown = exports.Dropdown = function (_React$PureComponent) {
             { className: 'pvtDropdownIcon' },
             this.props.open ? '×' : '▾'
           ),
-          this.props.current || _react2.default.createElement(
+          this.props.renderAttributeKey(this.props.current) || _react2.default.createElement(
             'span',
             null,
             '\xA0'
@@ -331,6 +331,12 @@ var Dropdown = exports.Dropdown = function (_React$PureComponent) {
 
   return Dropdown;
 }(_react2.default.PureComponent);
+
+Dropdown.defaultProps = {
+  renderAttributeKey: function renderAttributeKey(x) {
+    return x;
+  }
+};
 
 var PivotTableUI = function (_React$PureComponent2) {
   _inherits(PivotTableUI, _React$PureComponent2);
@@ -643,7 +649,8 @@ var PivotTableUI = function (_React$PureComponent2) {
               return _this8.sendPropUpdate({
                 vals: { $splice: [[i, 1, value]] }
               });
-            }
+            },
+            renderAttributeKey: _this8.props.renderAttributeKey
           }), i + 1 !== numValsAllowed ? _react2.default.createElement('br', { key: 'br' + i }) : null];
         })
       );

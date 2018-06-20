@@ -159,7 +159,7 @@ function makeRenderer(opts = {}) {
                             : 1
                         }
                       >
-                        {pivotData.props.renderAttributeValue(colKey[j])}
+                        {pivotData.props.renderAttributeValue(c, colKey[j])}
                       </th>
                     );
                   })}

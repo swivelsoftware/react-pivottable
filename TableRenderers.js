@@ -234,7 +234,7 @@ function makeRenderer() {
                       colSpan: x,
                       rowSpan: j === colAttrs.length - 1 && rowAttrs.length !== 0 ? 2 : 1
                     },
-                    pivotData.props.renderAttributeValue(colKey[j])
+                    pivotData.props.renderAttributeValue(c, colKey[j])
                   );
                 }),
                 j === 0 && _react2.default.createElement(

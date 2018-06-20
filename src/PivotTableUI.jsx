@@ -217,8 +217,11 @@ export class Dropdown extends React.PureComponent {
                 role="button"
                 onClick={e => {
                   e.stopPropagation();
-                  this.props.toggle();
-                  this.props.setValue(r);
+                  if (this.props.current === r) {
+                    this.props.toggle();
+                  } else {
+                    this.props.setValue(r);
+                  }
                 }}
                 className={
                   'pvtDropdownValue ' +

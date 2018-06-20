@@ -529,9 +529,19 @@ class PivotTableUI extends React.PureComponent {
       </td>
     );
 
+    let className = this.props.className
+    if (className && className.length > 0) {
+      className = className.split('\\s+')
+    }
+    else {
+      className = []
+    }
+    className.push('pvtUi')
+    className = className.join(' ')
+
     if (horizUnused) {
       return (
-        <table className="pvtUi">
+        <table className={className}>
           <tbody onClick={() => this.setState({openDropdown: false})}>
             <tr>
               {rendererCell}
@@ -551,7 +561,7 @@ class PivotTableUI extends React.PureComponent {
     }
 
     return (
-      <table className="pvtUi">
+      <table className={className}>
         <tbody onClick={() => this.setState({openDropdown: false})}>
           <tr>
             {rendererCell}

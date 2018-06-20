@@ -644,10 +644,19 @@ var PivotTableUI = function (_React$PureComponent2) {
         }))
       );
 
+      var className = this.props.className;
+      if (className && className.length > 0) {
+        className = className.split('\\s+');
+      } else {
+        className = [];
+      }
+      className.push('pvtUi');
+      className = className.join(' ');
+
       if (horizUnused) {
         return _react2.default.createElement(
           'table',
-          { className: 'pvtUi' },
+          { className: className },
           _react2.default.createElement(
             'tbody',
             { onClick: function onClick() {
@@ -677,7 +686,7 @@ var PivotTableUI = function (_React$PureComponent2) {
 
       return _react2.default.createElement(
         'table',
-        { className: 'pvtUi' },
+        { className: className },
         _react2.default.createElement(
           'tbody',
           { onClick: function onClick() {

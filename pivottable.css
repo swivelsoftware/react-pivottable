@@ -97,7 +97,6 @@ table.pvtTable tbody tr td {
 .pvtDropdownIcon {
   float: right;
   color: #a2b1c6;
-  transition: transform .3s;
   height: 16px !important;
   width: 16px !important;
 }
@@ -190,6 +189,8 @@ table.pvtTable tbody tr td {
   -moz-user-select: none;
   -khtml-user-select: none;
   -ms-user-select: none;
+  display: flex;
+  align-items: center;
 }
 
 .pvtTriangle {

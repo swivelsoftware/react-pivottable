@@ -6,6 +6,11 @@ import PivotTable from './PivotTable';
 import Sortable from 'react-sortablejs';
 import Draggable from 'react-draggable';
 
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import SettingsIcon from '@material-ui/icons/Settings'
+import IconButton from '@material-ui/core/IconButton'
+import classnames from 'classnames'
+
 /* eslint-disable react/prop-types */
 // eslint can't see inherited propTypes!
 
@@ -156,13 +161,12 @@ export class DraggableAttribute extends React.Component {
       <li data-id={this.props.name}>
         <span className={'pvtAttr ' + filtered}>
           {this.props.renderAttributeKey(this.props.name)}
-          <span
+          <IconButton
             className="pvtTriangle"
             onClick={this.toggleFilterBox.bind(this)}
           >
-            {' '}
-            ▾
-          </span>
+            <SettingsIcon />
+          </IconButton>
         </span>
 
         {this.state.open ? this.getFilterBox() : null}
@@ -202,7 +206,9 @@ export class Dropdown extends React.PureComponent {
           }
           role="button"
         >
-          <div className="pvtDropdownIcon">{this.props.open ? '×' : '▾'}</div>
+          <IconButton className={classnames("pvtDropdownIcon", { open: this.props.open })}>
+            <ExpandMoreIcon />
+          </IconButton>
           {this.props.current
             ? this.props.renderAttributeKey(this.props.current)
             : <span>&nbsp;</span>

@@ -33,6 +33,22 @@ var _reactDraggable = require('react-draggable');
 
 var _reactDraggable2 = _interopRequireDefault(_reactDraggable);
 
+var _ExpandMore = require('@material-ui/icons/ExpandMore');
+
+var _ExpandMore2 = _interopRequireDefault(_ExpandMore);
+
+var _Settings = require('@material-ui/icons/Settings');
+
+var _Settings2 = _interopRequireDefault(_Settings);
+
+var _IconButton = require('@material-ui/core/IconButton');
+
+var _IconButton2 = _interopRequireDefault(_IconButton);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -231,13 +247,12 @@ var DraggableAttribute = exports.DraggableAttribute = function (_React$Component
           { className: 'pvtAttr ' + filtered },
           this.props.renderAttributeKey(this.props.name),
           _react2.default.createElement(
-            'span',
+            _IconButton2.default,
             {
               className: 'pvtTriangle',
               onClick: this.toggleFilterBox.bind(this)
             },
-            ' ',
-            '\u25BE'
+            _react2.default.createElement(_Settings2.default, null)
           )
         ),
         this.state.open ? this.getFilterBox() : null
@@ -292,9 +307,9 @@ var Dropdown = exports.Dropdown = function (_React$PureComponent) {
             role: 'button'
           },
           _react2.default.createElement(
-            'div',
-            { className: 'pvtDropdownIcon' },
-            this.props.open ? '×' : '▾'
+            _IconButton2.default,
+            { className: (0, _classnames2.default)("pvtDropdownIcon", { open: this.props.open }) },
+            _react2.default.createElement(_ExpandMore2.default, null)
           ),
           this.props.current ? this.props.renderAttributeKey(this.props.current) : _react2.default.createElement(
             'span',

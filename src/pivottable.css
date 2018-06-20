@@ -97,7 +97,10 @@ table.pvtTable tbody tr td {
 .pvtDropdownIcon {
   float: right;
   color: #a2b1c6;
-  cursor: pointer;
+  transition: transform .3s;
+}
+.pvtDropdownIcon.open {
+  transform: scaleY(-1);
 }
 .pvtDropdownCurrent {
   text-align: left;
@@ -184,8 +187,12 @@ table.pvtTable tbody tr td {
 }
 
 .pvtTriangle {
-  cursor: pointer;
-  color: #506784;
+  height: 16px;
+  width: 16px;
+}
+.pvtTriangle svg {
+  height: 12px;
+  width: 12px;
 }
 
 .pvtHorizList li {

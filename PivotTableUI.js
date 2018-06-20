@@ -346,6 +346,7 @@ var PivotTableUI = function (_React$PureComponent2) {
       maxZIndex: 1000,
       openDropdown: false
     };
+    _this5.initializeValueFilter(props);
     return _this5;
   }
 
@@ -358,6 +359,40 @@ var PivotTableUI = function (_React$PureComponent2) {
     key: 'componentWillUpdate',
     value: function componentWillUpdate(nextProps) {
       this.materializeInput(nextProps.data);
+      this.initializeValueFilter(nextProps);
+    }
+  }, {
+    key: 'initializeValueFilter',
+    value: function initializeValueFilter(props) {
+      if (Object.keys(props.valueFilter).length === 0) {
+        if (props.data.length > 0) {
+          var keys = Object.keys(props.data[0]);
+          var _iteratorNormalCompletion = true;
+          var _didIteratorError = false;
+          var _iteratorError = undefined;
+
+          try {
+            for (var _iterator = keys[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              var key = _step.value;
+
+              props.valueFilter[key] = {};
+            }
+          } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+              }
+            } finally {
+              if (_didIteratorError) {
+                throw _iteratorError;
+              }
+            }
+          }
+        }
+      }
     }
   }, {
     key: 'materializeInput',
@@ -371,13 +406,13 @@ var PivotTableUI = function (_React$PureComponent2) {
       var recordsProcessed = 0;
       _Utilities.PivotData.forEachRecord(this.data, this.props.derivedAttributes, function (record) {
         materializedInput.push(record);
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
 
         try {
-          for (var _iterator = Object.keys(record)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var attr = _step.value;
+          for (var _iterator2 = Object.keys(record)[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+            var attr = _step2.value;
 
             if (!(attr in attrValues)) {
               attrValues[attr] = {};
@@ -387,16 +422,16 @@ var PivotTableUI = function (_React$PureComponent2) {
             }
           }
         } catch (err) {
-          _didIteratorError = true;
-          _iteratorError = err;
+          _didIteratorError2 = true;
+          _iteratorError2 = err;
         } finally {
           try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-              _iterator.return();
+            if (!_iteratorNormalCompletion2 && _iterator2.return) {
+              _iterator2.return();
             }
           } finally {
-            if (_didIteratorError) {
-              throw _iteratorError;
+            if (_didIteratorError2) {
+              throw _iteratorError2;
             }
           }
         }

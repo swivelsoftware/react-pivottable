@@ -244,6 +244,7 @@ class PivotTableUI extends React.PureComponent {
       maxZIndex: 1000,
       openDropdown: false,
     };
+    this.initializeValueFilter(props)
   }
 
   componentWillMount() {
@@ -252,6 +253,18 @@ class PivotTableUI extends React.PureComponent {
 
   componentWillUpdate(nextProps) {
     this.materializeInput(nextProps.data);
+    this.initializeValueFilter(nextProps)
+  }
+
+  initializeValueFilter(props) {
+    if (Object.keys(props.valueFilter).length === 0) {
+      if (props.data.length > 0) {
+        const keys = Object.keys(props.data[0])
+        for (const key of keys) {
+          props.valueFilter[key] = {}
+        }
+      }
+    }
   }
 
   materializeInput(nextData) {

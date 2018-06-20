@@ -98,9 +98,15 @@ table.pvtTable tbody tr td {
   float: right;
   color: #a2b1c6;
   transition: transform .3s;
+  height: 16px;
+  width: 16px;
 }
 .pvtDropdownIcon.open {
   transform: scaleY(-1);
+}
+.pvtDropdownIcon svg {
+  height: 12px;
+  width: 12px;
 }
 .pvtDropdownCurrent {
   text-align: left;

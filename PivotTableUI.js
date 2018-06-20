@@ -593,39 +593,43 @@ var PivotTableUI = function (_React$PureComponent2) {
       var aggregatorCell = _react2.default.createElement(
         'td',
         { className: 'pvtVals' },
-        _react2.default.createElement(Dropdown, {
-          current: this.props.aggregatorName,
-          values: Object.keys(this.props.aggregators),
-          open: this.isOpen('aggregators'),
-          zIndex: this.isOpen('aggregators') ? this.state.maxZIndex + 1 : 1,
-          toggle: function toggle() {
-            return _this8.setState({
-              openDropdown: _this8.isOpen('aggregators') ? false : 'aggregators'
-            });
-          },
-          setValue: this.propUpdater('aggregatorName')
-        }),
         _react2.default.createElement(
-          'a',
-          {
-            role: 'button',
-            className: 'pvtRowOrder',
-            onClick: function onClick() {
-              return _this8.propUpdater('rowOrder')(sortIcons[_this8.props.rowOrder].next);
-            }
-          },
-          sortIcons[this.props.rowOrder].rowSymbol
-        ),
-        _react2.default.createElement(
-          'a',
-          {
-            role: 'button',
-            className: 'pvtColOrder',
-            onClick: function onClick() {
-              return _this8.propUpdater('colOrder')(sortIcons[_this8.props.colOrder].next);
-            }
-          },
-          sortIcons[this.props.colOrder].colSymbol
+          'div',
+          { style: { alignItems: 'center', display: 'flex' } },
+          _react2.default.createElement(Dropdown, {
+            current: this.props.aggregatorName,
+            values: Object.keys(this.props.aggregators),
+            open: this.isOpen('aggregators'),
+            zIndex: this.isOpen('aggregators') ? this.state.maxZIndex + 1 : 1,
+            toggle: function toggle() {
+              return _this8.setState({
+                openDropdown: _this8.isOpen('aggregators') ? false : 'aggregators'
+              });
+            },
+            setValue: this.propUpdater('aggregatorName')
+          }),
+          _react2.default.createElement(
+            'a',
+            {
+              role: 'button',
+              className: 'pvtRowOrder',
+              onClick: function onClick() {
+                return _this8.propUpdater('rowOrder')(sortIcons[_this8.props.rowOrder].next);
+              }
+            },
+            sortIcons[this.props.rowOrder].rowSymbol
+          ),
+          _react2.default.createElement(
+            'a',
+            {
+              role: 'button',
+              className: 'pvtColOrder',
+              onClick: function onClick() {
+                return _this8.propUpdater('colOrder')(sortIcons[_this8.props.colOrder].next);
+              }
+            },
+            sortIcons[this.props.colOrder].colSymbol
+          )
         ),
         numValsAllowed > 0 && _react2.default.createElement('br', null),
         new Array(numValsAllowed).fill().map(function (n, i) {

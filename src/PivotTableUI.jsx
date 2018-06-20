@@ -435,36 +435,38 @@ class PivotTableUI extends React.PureComponent {
 
     const aggregatorCell = (
       <td className="pvtVals">
-        <Dropdown
-          current={this.props.aggregatorName}
-          values={Object.keys(this.props.aggregators)}
-          open={this.isOpen('aggregators')}
-          zIndex={this.isOpen('aggregators') ? this.state.maxZIndex + 1 : 1}
-          toggle={() =>
-            this.setState({
-              openDropdown: this.isOpen('aggregators') ? false : 'aggregators',
-            })
-          }
-          setValue={this.propUpdater('aggregatorName')}
-        />
-        <a
-          role="button"
-          className="pvtRowOrder"
-          onClick={() =>
-            this.propUpdater('rowOrder')(sortIcons[this.props.rowOrder].next)
-          }
-        >
-          {sortIcons[this.props.rowOrder].rowSymbol}
-        </a>
-        <a
-          role="button"
-          className="pvtColOrder"
-          onClick={() =>
-            this.propUpdater('colOrder')(sortIcons[this.props.colOrder].next)
-          }
-        >
-          {sortIcons[this.props.colOrder].colSymbol}
-        </a>
+        <div style={{ alignItems: 'center', display: 'flex' }}>
+          <Dropdown
+            current={this.props.aggregatorName}
+            values={Object.keys(this.props.aggregators)}
+            open={this.isOpen('aggregators')}
+            zIndex={this.isOpen('aggregators') ? this.state.maxZIndex + 1 : 1}
+            toggle={() =>
+              this.setState({
+                openDropdown: this.isOpen('aggregators') ? false : 'aggregators',
+              })
+            }
+            setValue={this.propUpdater('aggregatorName')}
+          />
+          <a
+            role="button"
+            className="pvtRowOrder"
+            onClick={() =>
+              this.propUpdater('rowOrder')(sortIcons[this.props.rowOrder].next)
+            }
+          >
+            {sortIcons[this.props.rowOrder].rowSymbol}
+          </a>
+          <a
+            role="button"
+            className="pvtColOrder"
+            onClick={() =>
+              this.propUpdater('colOrder')(sortIcons[this.props.colOrder].next)
+            }
+          >
+            {sortIcons[this.props.colOrder].colSymbol}
+          </a>
+        </div>
         {numValsAllowed > 0 && <br />}
         {new Array(numValsAllowed).fill().map((n, i) => [
           <Dropdown

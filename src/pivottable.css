@@ -121,9 +121,8 @@ table.pvtTable tbody tr td {
   position: absolute;
   min-width: 100%;
   margin-top: -1px;
-  border-radius: 0 0 4px 4px;
+  border-radius: 4px;
   border: 1px solid #a2b1c6;
-  border-top: 1px solid #dfe8f3;
   box-sizing: border-box;
 }
 

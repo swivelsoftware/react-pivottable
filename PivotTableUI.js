@@ -313,11 +313,8 @@ var Dropdown = exports.Dropdown = function (_React$PureComponent) {
                 role: 'button',
                 onClick: function onClick(e) {
                   e.stopPropagation();
-                  if (_this4.props.current === r) {
-                    _this4.props.toggle();
-                  } else {
-                    _this4.props.setValue(r);
-                  }
+                  _this4.props.toggle();
+                  _this4.props.setValue(r);
                 },
                 className: 'pvtDropdownValue ' + (r === _this4.props.current ? 'pvtDropdownActiveValue' : '')
               },

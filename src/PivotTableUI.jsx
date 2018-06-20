@@ -358,7 +358,7 @@ class PivotTableUI extends React.PureComponent {
       >
         {items.map(x => (
           <DraggableAttribute
-            name={x}
+            name={(this.props.renderAttribute || (x => x))(x)}
             key={x}
             attrValues={this.attrValues[x]}
             valueFilter={this.props.valueFilter[x] || {}}

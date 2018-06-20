@@ -31,6 +31,10 @@ table.pvtTable tbody tr th {
     padding: 5px;
 }
 
+table.pvtTable tbody tr td:first-child {
+    width: 1%;
+}
+
 table.pvtTable .pvtColLabel {
     text-align: center;
 }

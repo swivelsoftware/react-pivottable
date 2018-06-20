@@ -296,7 +296,7 @@ var Dropdown = exports.Dropdown = function (_React$PureComponent) {
             { className: 'pvtDropdownIcon' },
             this.props.open ? '×' : '▾'
           ),
-          this.props.renderAttributeKey(this.props.current) || _react2.default.createElement(
+          this.props.current ? this.props.renderAttributeKey(this.props.current) : _react2.default.createElement(
             'span',
             null,
             '\xA0'
@@ -321,7 +321,7 @@ var Dropdown = exports.Dropdown = function (_React$PureComponent) {
                 },
                 className: 'pvtDropdownValue ' + (r === _this4.props.current ? 'pvtDropdownActiveValue' : '')
               },
-              r
+              _this4.props.renderAttributeKey(r)
             );
           })
         )

@@ -203,7 +203,10 @@ export class Dropdown extends React.PureComponent {
           role="button"
         >
           <div className="pvtDropdownIcon">{this.props.open ? '×' : '▾'}</div>
-          {this.props.renderAttributeKey(this.props.current) || <span>&nbsp;</span>}
+          {this.props.current
+            ? this.props.renderAttributeKey(this.props.current)
+            : <span>&nbsp;</span>
+          }
         </div>
 
         {this.props.open && (
@@ -225,7 +228,7 @@ export class Dropdown extends React.PureComponent {
                   (r === this.props.current ? 'pvtDropdownActiveValue' : '')
                 }
               >
-                {r}
+                {this.props.renderAttributeKey(r)}
               </div>
             ))}
           </div>

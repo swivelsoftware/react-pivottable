@@ -98,8 +98,8 @@ table.pvtTable tbody tr td {
   float: right;
   color: #a2b1c6;
   transition: transform .3s;
-  height: 16px;
-  width: 16px;
+  height: 16px !important;
+  width: 16px !important;
 }
 .pvtDropdownIcon.open {
   transform: scaleY(-1);
@@ -193,8 +193,8 @@ table.pvtTable tbody tr td {
 }
 
 .pvtTriangle {
-  height: 16px;
-  width: 16px;
+  height: 16px !important;
+  width: 16px !important;
 }
 .pvtTriangle svg {
   height: 12px;

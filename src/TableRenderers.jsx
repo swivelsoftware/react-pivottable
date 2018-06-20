@@ -142,7 +142,7 @@ function makeRenderer(opts = {}) {
                     rowAttrs.length !== 0 && (
                       <th colSpan={rowAttrs.length} rowSpan={colAttrs.length} />
                     )}
-                  <th className="pvtAxisLabel">{pivotData.props.renderAttribute(c)}</th>
+                  <th className="pvtAxisLabel">{pivotData.props.renderAttributeKey(c)}</th>
                   {colKeys.map(function(colKey, i) {
                     const x = spanSize(colKeys, i, j);
                     if (x === -1) {
@@ -159,7 +159,7 @@ function makeRenderer(opts = {}) {
                             : 1
                         }
                       >
-                        {colKey[j]}
+                        {pivotData.props.renderAttributeValue(colKey[j])}
                       </th>
                     );
                   })}
@@ -183,7 +183,7 @@ function makeRenderer(opts = {}) {
                 {rowAttrs.map(function(r, i) {
                   return (
                     <th className="pvtAxisLabel" key={`rowAttr${i}`}>
-                      {pivotData.props.renderAttribute(r)}
+                      {pivotData.props.renderAttributeKey(r)}
                     </th>
                   );
                 })}

@@ -155,7 +155,7 @@ export class DraggableAttribute extends React.Component {
     return (
       <li data-id={this.props.name}>
         <span className={'pvtAttr ' + filtered}>
-          {this.props.renderAttribute(this.props.name)}
+          {this.props.renderAttributeKey(this.props.name)}
           <span
             className="pvtTriangle"
             onClick={this.toggleFilterBox.bind(this)}
@@ -369,7 +369,7 @@ class PivotTableUI extends React.PureComponent {
             moveFilterBoxToTop={this.moveFilterBoxToTop.bind(this)}
             removeValuesFromFilter={this.removeValuesFromFilter.bind(this)}
             zIndex={this.state.zIndices[x] || this.state.maxZIndex}
-            renderAttribute={this.props.renderAttribute || (x => x)}
+            renderAttributeKey={this.props.renderAttributeKey || (x => x)}
           />
         ))}
       </Sortable>

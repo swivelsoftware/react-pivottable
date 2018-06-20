@@ -593,8 +593,13 @@ var PivotData = function () {
     _classCallCheck(this, PivotData);
 
     this.props = Object.assign({}, PivotData.defaultProps, inputProps);
-    if (!this.props.renderAttribute) {
-      this.props.renderAttribute = function (x) {
+    if (!this.props.renderAttributeKey) {
+      this.props.renderAttributeKey = function (x) {
+        return x;
+      };
+    }
+    if (!this.props.renderAttributeValue) {
+      this.props.renderAttributeValue = function (x) {
         return x;
       };
     }

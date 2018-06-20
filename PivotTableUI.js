@@ -229,7 +229,7 @@ var DraggableAttribute = exports.DraggableAttribute = function (_React$Component
         _react2.default.createElement(
           'span',
           { className: 'pvtAttr ' + filtered },
-          this.props.renderAttribute(this.props.name),
+          this.props.renderAttributeKey(this.props.name),
           _react2.default.createElement(
             'span',
             {
@@ -505,7 +505,7 @@ var PivotTableUI = function (_React$PureComponent2) {
             moveFilterBoxToTop: _this7.moveFilterBoxToTop.bind(_this7),
             removeValuesFromFilter: _this7.removeValuesFromFilter.bind(_this7),
             zIndex: _this7.state.zIndices[x] || _this7.state.maxZIndex,
-            renderAttribute: _this7.props.renderAttribute || function (x) {
+            renderAttributeKey: _this7.props.renderAttributeKey || function (x) {
               return x;
             }
           });

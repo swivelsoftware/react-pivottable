@@ -593,6 +593,12 @@ var PivotData = function () {
     _classCallCheck(this, PivotData);
 
     this.props = Object.assign({}, PivotData.defaultProps, inputProps);
+    if (!this.props.renderAttribute) {
+      this.props.renderAttribute = function (x) {
+        return x;
+      };
+    }
+
     _propTypes2.default.checkPropTypes(PivotData.propTypes, this.props, 'prop', 'PivotData');
 
     this.aggregator = this.props.aggregators[this.props.aggregatorName](this.props.vals);

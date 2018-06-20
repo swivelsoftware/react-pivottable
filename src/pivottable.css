@@ -15,6 +15,10 @@
     vertical-align: top;
 }
 
+.pvtUi tbody tr td:first-child {
+    width: 1%;
+}
+
 table.pvtTable {
     font-size: 8pt;
     text-align: left;
@@ -29,10 +33,6 @@ table.pvtTable tbody tr th {
     border: 1px solid #c8d4e3;
     font-size: 8pt;
     padding: 5px;
-}
-
-table.pvtTable tbody tr td:first-child {
-    width: 1%;
 }
 
 table.pvtTable .pvtColLabel {

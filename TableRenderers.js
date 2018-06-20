@@ -219,7 +219,7 @@ function makeRenderer() {
                 _react2.default.createElement(
                   'th',
                   { className: 'pvtAxisLabel' },
-                  c
+                  pivotData.props.renderAttribute(c)
                 ),
                 colKeys.map(function (colKey, i) {
                   var x = spanSize(colKeys, i, j);
@@ -254,7 +254,7 @@ function makeRenderer() {
                 return _react2.default.createElement(
                   'th',
                   { className: 'pvtAxisLabel', key: 'rowAttr' + i },
-                  r
+                  pivotData.props.renderAttribute(r)
                 );
               }),
               _react2.default.createElement(

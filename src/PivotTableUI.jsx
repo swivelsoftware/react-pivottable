@@ -323,8 +323,10 @@ class PivotTableUI extends React.PureComponent {
     delete nextState.aggregators
     delete nextState.data
     delete nextState.derivedAttributes
+    delete nextState.renderAggregatorName
     delete nextState.renderAttributeKey
     delete nextState.renderAttributeValue
+    delete nextState.renderRendererName
     delete nextState.renderers
     delete nextState.sorters
     delete nextState.tableColorScaleGenerator

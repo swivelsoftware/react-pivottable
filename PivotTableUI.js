@@ -495,8 +495,10 @@ var PivotTableUI = function (_React$PureComponent2) {
       delete nextState.aggregators;
       delete nextState.data;
       delete nextState.derivedAttributes;
+      delete nextState.renderAggregatorName;
       delete nextState.renderAttributeKey;
       delete nextState.renderAttributeValue;
+      delete nextState.renderRendererName;
       delete nextState.renderers;
       delete nextState.sorters;
       delete nextState.tableColorScaleGenerator;

@@ -2,6 +2,7 @@
   color: #2a3f5f;
   font-family: Verdana;
   border-collapse: collapse;
+  height: 99.9%;
 }
 .pvtUi select {
   user-select: none;
@@ -12,7 +13,16 @@
 }
 
 .pvtUi td.pvtOutput {
+  overflow: auto;
   vertical-align: top;
+}
+
+.pvtUi tbody tr {
+  height: 1%;
+}
+
+.pvtUi tbody tr:last-child {
+  height: 100%;
 }
 
 .pvtUi tbody tr td:first-child {
@@ -128,7 +138,7 @@ table.pvtTable tbody tr td {
 .pvtDropdownMenu {
   background: white;
   position: absolute;
-  min-width: 100%;
+  min-width: 128px;
   margin-top: -1px;
   border-radius: 4px;
   border: 1px solid #a2b1c6;

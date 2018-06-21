@@ -31,7 +31,7 @@
   height: 100%;
 }
 
-.pvtUi tbody tr td:not(.pvtOutput):not(.pvtCols):not(.pvtVertList) {
+.pvtUi tbody tr td:not(.pvtOutput):not(.pvtCols):not(.pvtHorizList) {
   width: 150px;
 }
 

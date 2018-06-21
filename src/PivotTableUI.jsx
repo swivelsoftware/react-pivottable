@@ -317,8 +317,12 @@ class PivotTableUI extends React.PureComponent {
     delete nextState.aggregators
     delete nextState.data
     delete nextState.derivedAttributes
+    delete nextState.renderAttributeKey
+    delete nextState.renderAttributeValue
     delete nextState.renderers
     delete nextState.sorters
+    delete nextState.tableColorScaleGenerator
+    delete nextState.onChange
     
     this.props.onChange(nextState);
   }
@@ -481,7 +485,6 @@ class PivotTableUI extends React.PureComponent {
             {sortIcons[this.props.colOrder].colSymbol}
           </a>
         </div>
-        {numValsAllowed > 0 && <br />}
         {new Array(numValsAllowed).fill().map((n, i) => [
           <Dropdown
             key={i}

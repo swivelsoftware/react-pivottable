@@ -475,8 +475,12 @@ var PivotTableUI = function (_React$PureComponent2) {
       delete nextState.aggregators;
       delete nextState.data;
       delete nextState.derivedAttributes;
+      delete nextState.renderAttributeKey;
+      delete nextState.renderAttributeValue;
       delete nextState.renderers;
       delete nextState.sorters;
+      delete nextState.tableColorScaleGenerator;
+      delete nextState.onChange;
 
       this.props.onChange(nextState);
     }
@@ -654,7 +658,6 @@ var PivotTableUI = function (_React$PureComponent2) {
             sortIcons[this.props.colOrder].colSymbol
           )
         ),
-        numValsAllowed > 0 && _react2.default.createElement('br', null),
         new Array(numValsAllowed).fill().map(function (n, i) {
           return [_react2.default.createElement(Dropdown, {
             key: i,

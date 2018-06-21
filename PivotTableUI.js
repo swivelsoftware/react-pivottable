@@ -33,6 +33,22 @@ var _reactDraggable = require('react-draggable');
 
 var _reactDraggable2 = _interopRequireDefault(_reactDraggable);
 
+var _faSortAlphaDown = require('@fortawesome/fontawesome-free-solid/faSortAlphaDown');
+
+var _faSortAlphaDown2 = _interopRequireDefault(_faSortAlphaDown);
+
+var _faSortNumericDown = require('@fortawesome/fontawesome-free-solid/faSortNumericDown');
+
+var _faSortNumericDown2 = _interopRequireDefault(_faSortNumericDown);
+
+var _faSortNumericUp = require('@fortawesome/fontawesome-free-solid/faSortNumericUp');
+
+var _faSortNumericUp2 = _interopRequireDefault(_faSortNumericUp);
+
+var _reactFontawesome = require('@fortawesome/react-fontawesome');
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
 var _ExpandMore = require('@material-ui/icons/ExpandMore');
 
 var _ExpandMore2 = _interopRequireDefault(_ExpandMore);
@@ -609,16 +625,20 @@ var PivotTableUI = function (_React$PureComponent2) {
 
       var sortIcons = {
         key_a_to_z: {
-          rowSymbol: '↕',
-          colSymbol: '↔',
+          rowSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortAlphaDown2.default }),
+          colSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortAlphaDown2.default }),
           next: 'value_a_to_z'
         },
         value_a_to_z: {
-          rowSymbol: '↓',
-          colSymbol: '→',
+          rowSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericDown2.default }),
+          colSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericDown2.default }),
           next: 'value_z_to_a'
         },
-        value_z_to_a: { rowSymbol: '↑', colSymbol: '←', next: 'key_a_to_z' }
+        value_z_to_a: {
+          rowSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericUp2.default }),
+          colSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericUp2.default }),
+          next: 'key_a_to_z'
+        }
       };
 
       var aggregatorCell = _react2.default.createElement(
@@ -640,7 +660,7 @@ var PivotTableUI = function (_React$PureComponent2) {
             setValue: this.propUpdater('aggregatorName')
           }),
           _react2.default.createElement(
-            'a',
+            _IconButton2.default,
             {
               role: 'button',
               className: 'pvtRowOrder',
@@ -651,7 +671,7 @@ var PivotTableUI = function (_React$PureComponent2) {
             sortIcons[this.props.rowOrder].rowSymbol
           ),
           _react2.default.createElement(
-            'a',
+            _IconButton2.default,
             {
               role: 'button',
               className: 'pvtColOrder',

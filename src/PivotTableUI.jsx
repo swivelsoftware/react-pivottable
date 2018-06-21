@@ -6,6 +6,10 @@ import PivotTable from './PivotTable';
 import Sortable from 'react-sortablejs';
 import Draggable from 'react-draggable';
 
+import faSortAlphaDown from '@fortawesome/fontawesome-free-solid/faSortAlphaDown'
+import faSortNumericDown from '@fortawesome/fontawesome-free-solid/faSortNumericDown'
+import faSortNumericUp from '@fortawesome/fontawesome-free-solid/faSortNumericUp'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import SettingsIcon from '@material-ui/icons/Settings'
 import IconButton from '@material-ui/core/IconButton'
@@ -441,16 +445,20 @@ class PivotTableUI extends React.PureComponent {
 
     const sortIcons = {
       key_a_to_z: {
-        rowSymbol: '↕',
-        colSymbol: '↔',
+        rowSymbol: <FontAwesomeIcon icon={faSortAlphaDown} />,
+        colSymbol: <FontAwesomeIcon icon={faSortAlphaDown} />,
         next: 'value_a_to_z',
       },
       value_a_to_z: {
-        rowSymbol: '↓',
-        colSymbol: '→',
+        rowSymbol: <FontAwesomeIcon icon={faSortNumericDown} />,
+        colSymbol: <FontAwesomeIcon icon={faSortNumericDown} />,
         next: 'value_z_to_a',
       },
-      value_z_to_a: {rowSymbol: '↑', colSymbol: '←', next: 'key_a_to_z'},
+      value_z_to_a: {
+        rowSymbol: <FontAwesomeIcon icon={faSortNumericUp} />,
+        colSymbol: <FontAwesomeIcon icon={faSortNumericUp} />,
+        next: 'key_a_to_z'
+      },
     };
 
     const aggregatorCell = (
@@ -468,7 +476,7 @@ class PivotTableUI extends React.PureComponent {
             }
             setValue={this.propUpdater('aggregatorName')}
           />
-          <a
+          <IconButton
             role="button"
             className="pvtRowOrder"
             onClick={() =>
@@ -476,8 +484,8 @@ class PivotTableUI extends React.PureComponent {
             }
           >
             {sortIcons[this.props.rowOrder].rowSymbol}
-          </a>
-          <a
+          </IconButton>
+          <IconButton
             role="button"
             className="pvtColOrder"
             onClick={() =>
@@ -485,7 +493,7 @@ class PivotTableUI extends React.PureComponent {
             }
           >
             {sortIcons[this.props.colOrder].colSymbol}
-          </a>
+          </IconButton>
         </div>
         {new Array(numValsAllowed).fill().map((n, i) => [
           <Dropdown

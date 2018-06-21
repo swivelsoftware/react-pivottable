@@ -18,10 +18,8 @@
   vertical-align: top;
 }
 .pvtUi td.pvtOutput .container {
-  box-sizing: border-box;
   height: 100%;
   overflow: auto;
-  padding: 3px;
   width: 100%;
 }
 
@@ -76,7 +74,8 @@ table.pvtTable tbody tr td {
 .pvtRowOrder,
 .pvtColOrder {
   cursor: pointer;
-  width: 15px;
+  height: 16px;
+  width: 16px;
   margin-left: 5px;
   display: inline-block;
   user-select: none;
@@ -85,6 +84,11 @@ table.pvtTable tbody tr td {
   -moz-user-select: none;
   -khtml-user-select: none;
   -ms-user-select: none;
+}
+.pvtRowOrder svg,
+.pvtColOrder svg {
+  height: 12px;
+  width: 12px;
 }
 
 .pvtAxisContainer,

@@ -245,7 +245,11 @@ var DraggableAttribute = exports.DraggableAttribute = function (_React$Component
         _react2.default.createElement(
           'span',
           { className: 'pvtAttr ' + filtered },
-          this.props.renderAttributeKey(this.props.name),
+          _react2.default.createElement(
+            'span',
+            { className: 'text' },
+            this.props.renderAttributeKey(this.props.name)
+          ),
           _react2.default.createElement(
             _IconButton2.default,
             {

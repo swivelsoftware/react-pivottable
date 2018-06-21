@@ -160,7 +160,9 @@ export class DraggableAttribute extends React.Component {
     return (
       <li data-id={this.props.name}>
         <span className={'pvtAttr ' + filtered}>
-          {this.props.renderAttributeKey(this.props.name)}
+          <span className='text'>
+            {this.props.renderAttributeKey(this.props.name)}
+          </span>
           <IconButton
             className="pvtTriangle"
             onClick={this.toggleFilterBox.bind(this)}

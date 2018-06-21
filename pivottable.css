@@ -74,9 +74,8 @@ table.pvtTable tbody tr td {
 .pvtVals {
   border: 1px solid #a2b1c6;
   background: #f2f5fa;
-  padding: 5px;
   min-width: 20px;
-  min-height: 20px;
+  height: 34px;
 }
 
 .pvtRenderers {
@@ -160,7 +159,7 @@ table.pvtTable tbody tr td {
 }
 
 .pvtAxisContainer li {
-  padding: 8px 6px;
+  padding: 4px 3px;
   list-style-type: none;
   cursor: move;
 }
@@ -191,6 +190,12 @@ table.pvtTable tbody tr td {
   -ms-user-select: none;
   display: flex;
   align-items: center;
+}
+.pvtAxisContainer li span.pvtAttr .text {
+  flex-grow: 1;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .pvtTriangle {

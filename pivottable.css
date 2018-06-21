@@ -98,6 +98,7 @@ table.pvtTable tbody tr td {
   float: right;
   color: #a2b1c6;
   height: 16px !important;
+  margin-left: 8px;
   width: 16px !important;
 }
 .pvtDropdownIcon.open {
@@ -113,7 +114,7 @@ table.pvtTable tbody tr td {
   border-radius: 4px;
   display: inline-block;
   position: relative;
-  width: 128px;
+  width: 98px;
   box-sizing: border-box;
   background: white;
   overflow-x: hidden;
@@ -136,13 +137,13 @@ table.pvtTable tbody tr td {
 }
 
 .pvtDropdownValue {
-  cursor: pointer;
   padding: 2px 5px;
   font-size: 12px;
   text-align: left;
 }
-.pvtDropdownValue:hover {
+.pvtDropdownValue:not(.pvtDropdownCurrent):hover {
   background: #f3f6fa;
+  cursor: pointer;
 }
 .pvtDropdownActiveValue {
   background: #ebf0f8;

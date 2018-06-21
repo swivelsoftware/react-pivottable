@@ -71,6 +71,10 @@ table.pvtTable tbody tr > :not(.pvtVal):not(.pvtTotal) {
   min-width: 128px;
 }
 
+table.pvtTable tbody tr > .pvtTotalLabel {
+  height: 48px;
+}
+
 .pvtTotal,
 .pvtGrandTotal {
   font-weight: bold;

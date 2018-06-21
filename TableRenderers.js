@@ -243,7 +243,7 @@ function makeRenderer() {
                     className: 'pvtTotalLabel',
                     rowSpan: colAttrs.length + (rowAttrs.length === 0 ? 0 : 1)
                   },
-                  'Totals'
+                  pivotData.props.renderAttributeKey('Totals')
                 )
               );
             }),
@@ -260,7 +260,7 @@ function makeRenderer() {
               _react2.default.createElement(
                 'th',
                 { className: 'pvtTotalLabel' },
-                colAttrs.length === 0 ? 'Totals' : null
+                colAttrs.length === 0 ? pivotData.props.renderAttributeKey('Totals') : null
               )
             )
           ),
@@ -321,7 +321,7 @@ function makeRenderer() {
                   className: 'pvtTotalLabel',
                   colSpan: rowAttrs.length + (colAttrs.length === 0 ? 0 : 1)
                 },
-                'Totals'
+                pivotData.props.renderAttributeKey('Totals')
               ),
               colKeys.map(function (colKey, i) {
                 var totalAggregator = pivotData.getAggregator([], colKey);

@@ -331,7 +331,7 @@ var Dropdown = exports.Dropdown = function (_React$PureComponent) {
             { className: (0, _classnames2.default)("pvtDropdownIcon", { open: this.props.open }) },
             _react2.default.createElement(_ExpandMore2.default, null)
           ),
-          this.props.current ? this.props.renderAttributeKey(this.props.current) : _react2.default.createElement(
+          this.props.current ? this.props.render(this.props.current) : _react2.default.createElement(
             'span',
             null,
             '\xA0'
@@ -353,7 +353,7 @@ var Dropdown = exports.Dropdown = function (_React$PureComponent) {
                 },
                 className: 'pvtDropdownValue ' + (r === _this4.props.current ? 'pvtDropdownActiveValue' : '')
               },
-              _this4.props.renderAttributeKey(r)
+              _this4.props.render(r)
             );
           })
         )
@@ -365,7 +365,7 @@ var Dropdown = exports.Dropdown = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 Dropdown.defaultProps = {
-  renderAttributeKey: function renderAttributeKey(x) {
+  render: function render(x) {
     return x;
   }
 };
@@ -619,7 +619,8 @@ var PivotTableUI = function (_React$PureComponent2) {
               openDropdown: _this8.isOpen('renderer') ? false : 'renderer'
             });
           },
-          setValue: this.propUpdater('rendererName')
+          setValue: this.propUpdater('rendererName'),
+          render: this.props.renderRendererName
         })
       );
 
@@ -657,7 +658,8 @@ var PivotTableUI = function (_React$PureComponent2) {
                 openDropdown: _this8.isOpen('aggregators') ? false : 'aggregators'
               });
             },
-            setValue: this.propUpdater('aggregatorName')
+            setValue: this.propUpdater('aggregatorName'),
+            render: this.props.renderAggregatorName
           }),
           _react2.default.createElement(
             _IconButton2.default,
@@ -701,7 +703,7 @@ var PivotTableUI = function (_React$PureComponent2) {
                 vals: { $splice: [[i, 1, value]] }
               });
             },
-            renderAttributeKey: _this8.props.renderAttributeKey
+            render: _this8.props.renderAttributeKey
           }), i + 1 !== numValsAllowed ? _react2.default.createElement('br', { key: 'br' + i }) : null];
         })
       );

@@ -171,7 +171,7 @@ function makeRenderer(opts = {}) {
                         colAttrs.length + (rowAttrs.length === 0 ? 0 : 1)
                       }
                     >
-                      Totals
+                      {pivotData.props.renderAttributeKey('Totals')}
                     </th>
                   )}
                 </tr>
@@ -188,7 +188,7 @@ function makeRenderer(opts = {}) {
                   );
                 })}
                 <th className="pvtTotalLabel">
-                  {colAttrs.length === 0 ? 'Totals' : null}
+                  {colAttrs.length === 0 ? pivotData.props.renderAttributeKey('Totals') : null}
                 </th>
               </tr>
             )}
@@ -258,7 +258,7 @@ function makeRenderer(opts = {}) {
                 className="pvtTotalLabel"
                 colSpan={rowAttrs.length + (colAttrs.length === 0 ? 0 : 1)}
               >
-                Totals
+                {pivotData.props.renderAttributeKey('Totals')}
               </th>
 
               {colKeys.map(function(colKey, i) {

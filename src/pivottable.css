@@ -3,6 +3,8 @@
   font-family: Verdana;
   border-collapse: collapse;
   height: 99.9%;
+  table-layout: fixed;
+  width: 100%;
 }
 .pvtUi select {
   user-select: none;
@@ -32,7 +34,7 @@
 }
 
 .pvtUi tbody tr td:first-child {
-  width: 1%;
+  width: 150px;
 }
 
 table.pvtTable {

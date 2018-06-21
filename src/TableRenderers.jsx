@@ -132,6 +132,8 @@ function makeRenderer(opts = {}) {
             }
           : null;
 
+      const weight = 100 / (colKeys.length + 1)
+
       return (
         <table className="pvtTable">
           <thead>
@@ -229,10 +231,15 @@ function makeRenderer(opts = {}) {
                           getClickHandler &&
                           getClickHandler(aggregator.value(), rowKey, colKey)
                         }
-                        style={valueCellColors(
-                          rowKey,
-                          colKey,
-                          aggregator.value()
+                        style={Object.assign({},
+                          valueCellColors(
+                            rowKey,
+                            colKey,
+                            aggregator.value()
+                          ),
+                          {
+                            width: weight > 10 ? `${weight}%` : 'auto'
+                          }
                         )}
                       >
                         {aggregator.format(aggregator.value())}
@@ -245,7 +252,12 @@ function makeRenderer(opts = {}) {
                       getClickHandler &&
                       getClickHandler(totalAggregator.value(), rowKey, [null])
                     }
-                    style={colTotalColors(totalAggregator.value())}
+                    style={Object.assign({},
+                      colTotalColors(totalAggregator.value()),
+                      {
+                        width: weight > 10 ? `${weight}%` : 'auto'
+                      }
+                    )}
                   >
                     {totalAggregator.format(totalAggregator.value())}
                   </td>

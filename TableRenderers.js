@@ -205,6 +205,8 @@ function makeRenderer() {
           };
         } : null;
 
+        var weight = 100 / (colKeys.length + 1);
+
         return _react2.default.createElement(
           'table',
           { className: 'pvtTable' },
@@ -296,7 +298,9 @@ function makeRenderer() {
                       className: 'pvtVal',
                       key: 'pvtVal' + i + '-' + j,
                       onClick: getClickHandler && getClickHandler(aggregator.value(), rowKey, colKey),
-                      style: valueCellColors(rowKey, colKey, aggregator.value())
+                      style: Object.assign({}, valueCellColors(rowKey, colKey, aggregator.value()), {
+                        width: weight > 10 ? weight + '%' : 'auto'
+                      })
                     },
                     aggregator.format(aggregator.value())
                   );
@@ -306,7 +310,9 @@ function makeRenderer() {
                   {
                     className: 'pvtTotal',
                     onClick: getClickHandler && getClickHandler(totalAggregator.value(), rowKey, [null]),
-                    style: colTotalColors(totalAggregator.value())
+                    style: Object.assign({}, colTotalColors(totalAggregator.value()), {
+                      width: weight > 10 ? weight + '%' : 'auto'
+                    })
                   },
                   totalAggregator.format(totalAggregator.value())
                 )

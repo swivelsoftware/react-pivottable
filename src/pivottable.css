@@ -85,6 +85,9 @@ table.pvtTable tbody tr td {
   -khtml-user-select: none;
   -ms-user-select: none;
 }
+.pvtColOrder {
+  transform: rotate(-90deg);
+}
 .pvtRowOrder svg,
 .pvtColOrder svg {
   height: 14px;
@@ -112,6 +115,7 @@ table.pvtTable tbody tr td {
   -khtml-user-select: none;
   -ms-user-select: none;
   margin: 3px;
+  height: 22px;
 }
 
 .pvtDropdownIcon {

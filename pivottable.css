@@ -66,6 +66,10 @@ table.pvtTable tbody tr td {
   text-align: right;
 }
 
+table.pvtTable tbody tr > :not(.pvtVal):not(.pvtTotal) {
+  width: 1%;
+}
+
 .pvtTotal,
 .pvtGrandTotal {
   font-weight: bold;

@@ -473,6 +473,7 @@ var PivotTableUI = function (_React$PureComponent2) {
       var nextState = (0, _immutabilityHelper2.default)(this.props, command);
 
       delete nextState.aggregators;
+      delete nextState.data;
       delete nextState.derivedAttributes;
       delete nextState.renderers;
       delete nextState.sorters;

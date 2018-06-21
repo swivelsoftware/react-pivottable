@@ -315,6 +315,7 @@ class PivotTableUI extends React.PureComponent {
     const nextState = update(this.props, command)
 
     delete nextState.aggregators
+    delete nextState.data
     delete nextState.derivedAttributes
     delete nextState.renderers
     delete nextState.sorters

@@ -66,8 +66,9 @@ table.pvtTable tbody tr td {
   text-align: right;
 }
 
+table.pvtTable thead tr > .pvtColLabel,
 table.pvtTable tbody tr > :not(.pvtVal):not(.pvtTotal) {
-  width: 1%;
+  min-width: 128px;
 }
 
 .pvtTotal,

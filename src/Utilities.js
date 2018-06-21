@@ -529,9 +529,6 @@ Data Model class
 class PivotData {
   constructor(inputProps = {}) {
     this.props = Object.assign({}, PivotData.defaultProps, inputProps);
-    if (!Object.keys(this.props.aggregators)) {
-      this.props.aggregators = PivotData.defaultProps.aggregators
-    }
     if (!this.props.renderAttributeKey) {
       this.props.renderAttributeKey = x => x
     }

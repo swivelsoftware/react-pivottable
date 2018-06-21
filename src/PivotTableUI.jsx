@@ -312,7 +312,14 @@ class PivotTableUI extends React.PureComponent {
   }
 
   sendPropUpdate(command) {
-    this.props.onChange(update(this.props, command));
+    const nextState = update(this.props, command)
+
+    delete nextState.aggregators
+    delete nextState.derivedAttributes
+    delete nextState.renderers
+    delete nextState.sorters
+    
+    this.props.onChange(nextState);
   }
 
   propUpdater(key) {

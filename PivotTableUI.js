@@ -470,7 +470,14 @@ var PivotTableUI = function (_React$PureComponent2) {
   }, {
     key: 'sendPropUpdate',
     value: function sendPropUpdate(command) {
-      this.props.onChange((0, _immutabilityHelper2.default)(this.props, command));
+      var nextState = (0, _immutabilityHelper2.default)(this.props, command);
+
+      delete nextState.aggregators;
+      delete nextState.derivedAttributes;
+      delete nextState.renderers;
+      delete nextState.sorters;
+
+      this.props.onChange(nextState);
     }
   }, {
     key: 'propUpdater',

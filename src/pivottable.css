@@ -13,8 +13,14 @@
 }
 
 .pvtUi td.pvtOutput {
-  overflow: auto;
   vertical-align: top;
+}
+.pvtUi td.pvtOutput .container {
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  padding: 3px;
+  width: 100%;
 }
 
 .pvtUi tbody tr {
@@ -33,9 +39,8 @@ table.pvtTable {
   font-size: 8pt;
   text-align: left;
   border-collapse: collapse;
-  margin-top: 3px;
-  margin-left: 3px;
   font-family: Verdana;
+  width: 100%;
 }
 table.pvtTable thead tr th,
 table.pvtTable tbody tr th {

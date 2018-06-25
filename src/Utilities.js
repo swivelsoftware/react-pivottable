@@ -781,7 +781,7 @@ PivotData.defaultProps = {
   cols: [],
   rows: [],
   vals: [],
-  aggregatorName: Object.keys(aggregators)[0],
+  aggregatorName: 'Sum',
   sorters: {},
   valueFilter: {},
   rowOrder: 'key_a_to_z',

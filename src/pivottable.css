@@ -185,7 +185,7 @@ table.pvtTable tbody tr > .pvtTotalLabel {
 .pvtVals {
   text-align: center;
   white-space: nowrap;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .pvtRows {

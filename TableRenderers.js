@@ -302,7 +302,7 @@ function makeRenderer() {
                         width: weight > 10 ? weight + '%' : 'auto'
                       })
                     },
-                    aggregator.format(aggregator.value())
+                    pivotData.props.renderValue(aggregator.value()) || aggregator.format(aggregator.value())
                   );
                 }),
                 _react2.default.createElement(

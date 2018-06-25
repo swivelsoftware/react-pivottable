@@ -327,6 +327,7 @@ class PivotTableUI extends React.PureComponent {
     delete nextState.renderAttributeKey
     delete nextState.renderAttributeValue
     delete nextState.renderRendererName
+    delete nextState.renderValue
     delete nextState.renderers
     delete nextState.sorters
     delete nextState.tableColorScaleGenerator

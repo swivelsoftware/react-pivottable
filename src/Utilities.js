@@ -535,6 +535,9 @@ class PivotData {
     if (!this.props.renderAttributeValue) {
       this.props.renderAttributeValue = x => x
     }
+    if (!this.props.renderValue) {
+      this.props.renderValue = () => {}
+    }
 
     PropTypes.checkPropTypes(
       PivotData.propTypes,

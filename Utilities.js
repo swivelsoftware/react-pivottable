@@ -603,6 +603,9 @@ var PivotData = function () {
         return x;
       };
     }
+    if (!this.props.renderValue) {
+      this.props.renderValue = function () {};
+    }
 
     _propTypes2.default.checkPropTypes(PivotData.propTypes, this.props, 'prop', 'PivotData');
 

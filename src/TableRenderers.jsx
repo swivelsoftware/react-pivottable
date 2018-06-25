@@ -242,7 +242,7 @@ function makeRenderer(opts = {}) {
                           }
                         )}
                       >
-                        {pivotData.props.renderValue(aggregator.value()) || aggregator.format(aggregator.value())}
+                        {aggregator.format(aggregator.value())}
                       </td>
                     );
                   })}

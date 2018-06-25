@@ -417,8 +417,8 @@ aggregatorTemplates.stdev = (ddof, f) =>
 
 // default aggregators & renderers use US naming and number formatting
 const aggregators = (tpl => ({
-  Count: tpl.count(usFmtInt),
-  'Count Unique Values': tpl.countUnique(usFmtInt),
+  // Count: tpl.count(usFmtInt),
+  // 'Count Unique Values': tpl.countUnique(usFmtInt),
   'List Unique Values': tpl.listUnique(', '),
   Sum: tpl.sum(usFmt),
   'Integer Sum': tpl.sum(usFmtInt),
@@ -534,9 +534,6 @@ class PivotData {
     }
     if (!this.props.renderAttributeValue) {
       this.props.renderAttributeValue = x => x
-    }
-    if (!this.props.renderValue) {
-      this.props.renderValue = () => {}
     }
 
     PropTypes.checkPropTypes(

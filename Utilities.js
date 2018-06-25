@@ -485,8 +485,8 @@ aggregatorTemplates.stdev = function (ddof, f) {
 // default aggregators & renderers use US naming and number formatting
 var aggregators = function (tpl) {
   return {
-    Count: tpl.count(usFmtInt),
-    'Count Unique Values': tpl.countUnique(usFmtInt),
+    // Count: tpl.count(usFmtInt),
+    // 'Count Unique Values': tpl.countUnique(usFmtInt),
     'List Unique Values': tpl.listUnique(', '),
     Sum: tpl.sum(usFmt),
     'Integer Sum': tpl.sum(usFmtInt),
@@ -602,9 +602,6 @@ var PivotData = function () {
       this.props.renderAttributeValue = function (x) {
         return x;
       };
-    }
-    if (!this.props.renderValue) {
-      this.props.renderValue = function () {};
     }
 
     _propTypes2.default.checkPropTypes(PivotData.propTypes, this.props, 'prop', 'PivotData');

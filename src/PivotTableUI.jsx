@@ -6,9 +6,9 @@ import PivotTable from './PivotTable';
 import Sortable from 'react-sortablejs';
 import Draggable from 'react-draggable';
 
-import faSortAlphaDown from '@fortawesome/fontawesome-free-solid/faSortAlphaDown'
-import faSortNumericDown from '@fortawesome/fontawesome-free-solid/faSortNumericDown'
-import faSortNumericUp from '@fortawesome/fontawesome-free-solid/faSortNumericUp'
+import { faSortAlphaDown } from '@fortawesome/free-solid-svg-icons/faSortAlphaDown'
+import { faSortNumericDown } from '@fortawesome/free-solid-svg-icons/faSortNumericDown'
+import { faSortNumericUp } from '@fortawesome/free-solid-svg-icons/faSortNumericUp'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import SettingsIcon from '@material-ui/icons/Settings'

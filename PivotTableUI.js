@@ -33,17 +33,11 @@ var _reactDraggable = require('react-draggable');
 
 var _reactDraggable2 = _interopRequireDefault(_reactDraggable);
 
-var _faSortAlphaDown = require('@fortawesome/fontawesome-free-solid/faSortAlphaDown');
+var _faSortAlphaDown = require('@fortawesome/free-solid-svg-icons/faSortAlphaDown');
 
-var _faSortAlphaDown2 = _interopRequireDefault(_faSortAlphaDown);
+var _faSortNumericDown = require('@fortawesome/free-solid-svg-icons/faSortNumericDown');
 
-var _faSortNumericDown = require('@fortawesome/fontawesome-free-solid/faSortNumericDown');
-
-var _faSortNumericDown2 = _interopRequireDefault(_faSortNumericDown);
-
-var _faSortNumericUp = require('@fortawesome/fontawesome-free-solid/faSortNumericUp');
-
-var _faSortNumericUp2 = _interopRequireDefault(_faSortNumericUp);
+var _faSortNumericUp = require('@fortawesome/free-solid-svg-icons/faSortNumericUp');
 
 var _reactFontawesome = require('@fortawesome/react-fontawesome');
 
@@ -628,18 +622,18 @@ var PivotTableUI = function (_React$PureComponent2) {
 
       var sortIcons = {
         key_a_to_z: {
-          rowSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortAlphaDown2.default }),
-          colSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortAlphaDown2.default }),
+          rowSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortAlphaDown.faSortAlphaDown }),
+          colSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortAlphaDown.faSortAlphaDown }),
           next: 'value_a_to_z'
         },
         value_a_to_z: {
-          rowSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericDown2.default }),
-          colSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericDown2.default }),
+          rowSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericDown.faSortNumericDown }),
+          colSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericDown.faSortNumericDown }),
           next: 'value_z_to_a'
         },
         value_z_to_a: {
-          rowSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericUp2.default }),
-          colSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericUp2.default }),
+          rowSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericUp.faSortNumericUp }),
+          colSymbol: _react2.default.createElement(_reactFontawesome2.default, { icon: _faSortNumericUp.faSortNumericUp }),
           next: 'key_a_to_z'
         }
       };

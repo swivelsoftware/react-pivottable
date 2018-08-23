@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plotly/react-pivottable.git"
+    "url": "git+https://github.com/swivelsoftware/react-pivottable.git"
   },
   "keywords": [
     "react",
@@ -41,12 +41,12 @@
   "author": "Nicolas Kruchten <nicolas@kruchten.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/plotly/react-pivottable/issues"
+    "url": "https://github.com/swivelsoftware/react-pivottable/issues"
   },
-  "homepage": "https://github.com/plotly/react-pivottable#readme",
+  "homepage": "https://github.com/swivelsoftware/react-pivottable#readme",
   "dependencies": {
-    "@material-ui/core": "^1.2.2",
-    "@material-ui/icons": "^1.1.0",
+    "@material-ui/core": "^1.5.1",
+    "@material-ui/icons": "^2.0.3",
     "classnames": "^2.2.6",
     "immutability-helper": "^2.3.1",
     "prop-types": "^15.5.10",

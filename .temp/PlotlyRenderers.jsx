@@ -48,8 +48,13 @@ function makeRenderer(
           labels.push(datumKey.join('-') || ' ');
         }
         const trace = {name: traceKey.join('-') || fullAggName};
-        trace.x = transpose ? values : labels;
-        trace.y = transpose ? labels : values;
+        if (traceOptions.type === 'pie') {
+          trace.values = values;
+          trace.labels = labels.length > 1 ? labels : [fullAggName];
+        } else {
+          trace.x = transpose ? values : labels;
+          trace.y = transpose ? labels : values;
+        }
         return Object.assign(trace, traceOptions);
       });
 
@@ -74,15 +79,34 @@ function makeRenderer(
         width: window.innerWidth / 1.5,
         height: window.innerHeight / 1.4 - 50,
         /* eslint-enable no-magic-numbers */
-        xaxis: {
+      };
+
+      if (traceOptions.type === 'pie') {
+        const columns = Math.ceil(Math.sqrt(data.length));
+        const rows = Math.ceil(data.length / columns);
+        layout.grid = {columns, rows};
+        data.forEach((d, i) => {
+          d.domain = {
+            row: Math.floor(i / columns),
+            column: i - columns * Math.floor(i / columns),
+          };
+          if (data.length > 1) {
+            d.title = d.name;
+          }
+        });
+        if (data[0].labels.length === 1) {
+          layout.showlegend = false;
+        }
+      } else {
+        layout.xaxis = {
           title: transpose ? fullAggName : null,
           automargin: true,
-        },
-        yaxis: {
+        };
+        layout.yaxis = {
           title: transpose ? null : fullAggName,
           automargin: true,
-        },
-      };
+        };
+      }
 
       return (
         <PlotlyComponent
@@ -142,8 +166,8 @@ function makeScatterRenderer(PlotlyComponent) {
         title: this.props.rows.join('-') + ' vs ' + this.props.cols.join('-'),
         hovermode: 'closest',
         /* eslint-disable no-magic-numbers */
-        xaxis: {title: this.props.cols.join('-'), domain: [0.1, 1.0]},
-        yaxis: {title: this.props.rows.join('-')},
+        xaxis: {title: this.props.cols.join('-'), automargin: true},
+        yaxis: {title: this.props.rows.join('-'), automargin: true},
         width: window.innerWidth / 1.5,
         height: window.innerHeight / 1.4 - 50,
         /* eslint-enable no-magic-numbers */
@@ -199,6 +223,13 @@ export default function createPlotlyRenderers(PlotlyComponent) {
     ),
     'Line Chart': makeRenderer(PlotlyComponent),
     'Dot Chart': makeRenderer(PlotlyComponent, {mode: 'markers'}, {}, true),
+    'Area Chart': makeRenderer(PlotlyComponent, {stackgroup: 1}),
     'Scatter Chart': makeScatterRenderer(PlotlyComponent),
+    'Multiple Pie Chart': makeRenderer(
+      PlotlyComponent,
+      {type: 'pie', scalegroup: 1, hoverinfo: 'label+value', textinfo: 'none'},
+      {},
+      true
+    ),
   };
 }
